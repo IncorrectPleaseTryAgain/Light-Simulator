@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Light Simulator</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+  </head>
+
+  <body>
+
+    <!--SPLIT SCREEN-->
+    <!--LEFT-->
+    <div class="split left" id="canvas">
+      <!--CANVAS-->
+      <script src="sketch.js"></script>
+    </div>
+
+    <!--RIGHT-->
+    <div class="split right">
+      <!--HEADER-->
+      <div class="header">
+        <h1 id="title"><label>Light Simulator</label></h1>
+        <h2 id="signature"><label>by Michael Steenkamp</label></h2>
+      </div>
+
+      <!--SETTINGS-->
+      <div class="settings">
+        <lable id="title">Settings</lable><br>
+        <input id="input_boundaryPerimeter" class="checkbox" type="checkbox" onclick="event_settings_boundaryPerimeter()"><label>Boundary Perimeter</label>
+        <br>
+        <input id="input_rayStrength_Light" class="checkbox" name="rayStrength" type="radio" onclick="event_settings_rayStrength()"><label>Light</label>
+        <input id="input_rayStrength_Dense" class="checkbox" name="rayStrength" type="radio" onclick="event_settings_rayStrength()"><label>Dense</label>
+        <input id="input_rayStrength_Extreme" class="checkbox" name="rayStrength" type="radio" onclick="event_settings_rayStrength()"><label>Extreme</label>
+        <br>
+        <label>Boundary Stroke Weight</label><br>
+        <input id="input_boundaryStrokeWeight" class="slider_rgl" type="range" min="1" max="10" oninput="event_settings_boundaryStrokeWeight()">
+        <output id="output_boundaryStrokeWeight"></output>
+        <br>
+        <label>Brightness</label><br>
+        <input id="input_sourceBrightness" class="slider_rgl" type="range" min="10" max="255" step="5" oninput="event_settings_sourceBrightness()">
+        <output id="output_sourceBrightness"></output>
+        <br>
+        <label>Color</label><br>
+        <input id="input_sourceColor" class="colorPicker" type="color" oninput="event_settings_sourceColor()">
+
+      </div>
+
+      <!--BUTTONS-->
+      <div class="actions">
+        <lable id="title">Actions</lable><br>
+        <button id="button_insertboundary" class="button" onmousedown="event_action_insertboundary()"><label>Insert Boundary</label></button>
+        <br>
+        <button id="button_removeboundary" class="button" onmousedown="event_action_removeboundary()"><label>Remove Boundary</label></button>
+        <br> 
+        <button id="button_generateRandom" class="button" onmousedown="event_action_generateRandom()"><label>Generate Random</label></button>
+        <br>
+        <button id="button_clearcanvas" class="button" onmousedown="event_action_clearcanvas()"><label>Clear Canvas</label></button>
+        <br>
+        <button id="button_done" class="button" onmousedown="event_action_done()"><label>Done</label></button>
+      </div>
+    </div>
+
+    <!--SOURCE FILES-->
+    <script src="boundaries.js"></script>
+    <script src="ray.js"></script>
+    <script src="source.js"></script>
+
+  </body>
+</html>
+
