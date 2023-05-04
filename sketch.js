@@ -229,11 +229,19 @@ function event_action_done() {
 */
 function windowResized() {
 
+  this.boundaries.windowResize(document.getElementById("canvas").offsetWidth, document.getElementById("canvas").offsetHeight);
+
   canvasWidth = document.getElementById("canvas").offsetWidth;
   canvasHeight = document.getElementById("canvas").offsetHeight;
 
   resizeCanvas(canvasWidth, canvasHeight, true);
   drawBackground();
+
+  //Resize perimeter
+  if(document.getElementById("input_boundaryPerimeter").checked) {
+    this.boundaries.removePerimeter();
+    this.boundaries.addPerimeter();
+  }
 
   draw();
 }
