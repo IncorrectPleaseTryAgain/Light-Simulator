@@ -238,4 +238,39 @@ class Boundaries {
         let B = createVector(random(canvasWidth), random(canvasHeight));
         this.addBoundary(A, B);
     }
+    
+        /*
+    * Name: Window Resize
+    * Parameters: float, float
+    * Return: N/A
+    *
+    * Description: This function dynamicly adjusts each boundaries
+    *              endpoints so that they keep their aspect ration
+    *              on the new canvas size
+    *  
+    */
+    windowResize(newCanvasWidth, newCanvasHeight) {
+
+        let widthRatio = 1;
+        let heightRatio = 1;
+
+        if(canvasWidth < newCanvasWidth) {
+            widthRatio = newCanvasWidth / canvasWidth;
+        } else if(canvasWidth > newCanvasWidth) {
+            widthRatio = newCanvasWidth / canvasWidth;
+        }
+
+        if(canvasHeight < newCanvasHeight) {
+            heightRatio = newCanvasHeight / canvasHeight;
+        } else if(canvasHeight > newCanvasHeight) {
+            heightRatio = newCanvasHeight / canvasHeight;
+        }
+
+        for(let boundary of this.boundaryList) {
+            boundary[0].x *= widthRatio;
+            boundary[0].y *= heightRatio;
+            boundary[1].x *= widthRatio;
+            boundary[1].y *= heightRatio;
+        }
+    }
 };
