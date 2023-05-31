@@ -1,6 +1,6 @@
 /*  Michael Steenkamp
 *   29/04/2023
-*   Light Simulator
+*   Light Simulator | Simple
 *
 *   Language: 
 *           JavaScript
