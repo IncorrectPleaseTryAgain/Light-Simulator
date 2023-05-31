@@ -1,4 +1,4 @@
-# Light-Simulator
+# Light Simulator | Simple
 Simple ray casting light simulator
 
 ![image](https://user-images.githubusercontent.com/99939034/236926992-da1800af-8a93-4050-89ce-c1c2e6e3ba7c.png)
